@@ -53,7 +53,7 @@ chooser = np.arange(27)
 preScore = score(getAnswer(text, chooser))
 
 for i in range(1,50001):
-    chosen = np.random.choice(np.arange(26), 2, replace=False)
+    chosen = np.random.choice(np.arange(27), 2, replace=False)
     preChooser = chooser.copy()
 
     chooser[chosen[0]] = preChooser[chosen[1]]
