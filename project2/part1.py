@@ -14,7 +14,7 @@ for i in range(20, 101, 20):
     eigDist = []
     for j in range(100):
         
-        m = np.random.normal(0, 0.02, (i, i))
+        m = np.random.normal(0, np.sqrt(2/n), (i, i))
         goe = (m + m.transpose())/2
 
         eigs = np.linalg.eigvalsh(goe)
@@ -24,7 +24,7 @@ for i in range(20, 101, 20):
             eigDist.append(e)
 
     plt.subplot(2, 3, k)
-    plt.hist(eigDist, bins=100)
+    plt.hist(eigDist, bins=100, range=(-2,2))
     plt.xlabel("eigenvalues")
     plt.ylabel("bin count")
     plt.title(f'n={i}')

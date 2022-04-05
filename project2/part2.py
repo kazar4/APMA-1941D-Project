@@ -13,7 +13,7 @@ for i in range(25, m + 1, 25):
     k = k + 1
     eigDist = []
     for j in range(100):
-        X = np.random.normal(scale=n**-0.5, size=(n, i))
+        X = np.random.normal(size=(n, i))
         #print(X.shape)
         P = (1/n) * np.dot(X, X.T)
         eigs = np.linalg.eigvalsh(P)
@@ -36,7 +36,7 @@ for i in range(25, m + 1, 25):
     plt.hist(eigDist, bins=100)
     plt.xlabel("eigenvalues")
     plt.ylabel("bin count")
-    plt.title(f'n={i}')
+    plt.title(f'm={i} ratio={i/n}')
     plt.subplots_adjust(hspace=0.5, wspace=0.5)
 
 #print(eigVals)
