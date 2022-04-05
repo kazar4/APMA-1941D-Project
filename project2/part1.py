@@ -7,8 +7,10 @@ from skrmt.ensemble import GaussianEnsemble
 
 n = 100
 m = 150
+k = 0
 
 for i in range(20, 101, 20):
+    k = k + 1
     eigDist = []
     for j in range(100):
         
@@ -21,8 +23,14 @@ for i in range(20, 101, 20):
         for e in eigs:
             eigDist.append(e)
 
+    plt.subplot(2, 3, k)
     plt.hist(eigDist, bins=100)
-    plt.show()
+    plt.xlabel("eigenvalues")
+    plt.ylabel("bin count")
+    plt.title(f'n={i}')
+    plt.subplots_adjust(hspace=0.5, wspace=0.5)
+
+plt.show()
 
 
 # Checking with libraries if distribution mkes sense

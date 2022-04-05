@@ -8,7 +8,9 @@ m = 150
 
 eigVals = []
 xAxis = []
-for i in range(1, m + 1, 25):
+k = 0
+for i in range(25, m + 1, 25):
+    k = k + 1
     eigDist = []
     for j in range(100):
         X = np.random.normal(scale=n**-0.5, size=(n, i))
@@ -29,8 +31,13 @@ for i in range(1, m + 1, 25):
 
             currEigs.append(e)
             currXAxis.append(i)
+
+    plt.subplot(2, 3, k)
     plt.hist(eigDist, bins=100)
-    plt.show()
+    plt.xlabel("eigenvalues")
+    plt.ylabel("bin count")
+    plt.title(f'n={i}')
+    plt.subplots_adjust(hspace=0.5, wspace=0.5)
 
 #print(eigVals)
 #print(xAxis)
