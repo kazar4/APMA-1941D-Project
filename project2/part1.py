@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import tenpy
-from skrmt.ensemble import GaussianEnsemble
+#import tenpy
+#from skrmt.ensemble import GaussianEnsemble
 
 # Eigenvalue dist for n = 100, m = 25, 50, ... 100
 
